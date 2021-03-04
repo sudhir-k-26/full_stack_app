@@ -9,6 +9,7 @@ const expressLayouts = require("express-ejs-layouts");
 const path = require('path');
 const routes = require('./routes/index');
 const authors = require('./routes/authors');
+const books = require('./routes/books');
 const mongoose = require('mongoose');
 
 
@@ -28,6 +29,7 @@ app.use(expressLayouts);
 app.use(express.static('public'));
 app.use('/',routes);
 app.use('/authors',authors);
+app.use('/books',books);
 const PORT = process.env.PORT || 5000;
 app.listen(PORT,()=>{
 
